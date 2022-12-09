@@ -47,13 +47,6 @@ from sklearn.linear_model import (LinearRegression,
 # read data
 mpg_df = pd.read_csv("auto-mpg.csv", na_values = "?")
 
-dic = []
-con_val = ['displacement', 'horsepower', 'weight', 'acceleration','model year']
-for i in con_val:
-    a = np.array(mpg_df.loc[:, i]).reshape(mpg_df.shape[0], 1)
-    pre = StandardScaler().fit(a)
-    dic.append((i, pre))
-
 
 add_selectbox = st.sidebar.selectbox(
     "Please Select A Chapter",
